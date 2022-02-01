@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter2D( Collision2D collision )
     {
-        throw new System.NotImplementedException();
+        DestroyTarget();
     }
 
     public void DestroyTarget()

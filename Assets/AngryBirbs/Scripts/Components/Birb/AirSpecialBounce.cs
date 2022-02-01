@@ -7,6 +7,13 @@ public class AirSpecialBounce : MonoBehaviour, IAirSpecial
 
     public void ExecuteAirSpecial()
     {
-        throw new System.NotImplementedException();
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        Vector2 bounceForce;
+        bounceForce.x = rb.velocity.x - SlowDownFactor;
+        bounceForce.y = -rb.velocity.y;
+
+        rb.velocity = (Vector2.zero);
+        rb.AddForce(bounceForce, ForceMode2D.Impulse);
     }
 }

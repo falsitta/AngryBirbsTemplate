@@ -66,7 +66,13 @@ public class Birb : MonoBehaviour
 
     public void Launch(Vector3 offset, float maximumStretch, Rigidbody2D rigidbody)
     {
-        throw new System.NotImplementedException();
+        float stretchLength;
+        stretchLength = Vector2.Distance(transform.position, offset);
+
+        float stretchPower = stretchLength / maximumStretch + 5f;
+
+        rigidbody.AddForce(-offset * stretchPower, ForceMode2D.Impulse);
+
     }
 
 }

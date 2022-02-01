@@ -11,6 +11,9 @@ public class MovingTarget : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        rb.velocity = new Vector2(0, MovementSpeed);
+
     }
 }

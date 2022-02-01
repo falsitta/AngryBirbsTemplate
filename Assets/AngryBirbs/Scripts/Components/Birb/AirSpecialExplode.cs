@@ -7,6 +7,7 @@ public class AirSpecialExplode : MonoBehaviour, IAirSpecial
 
     public void ExecuteAirSpecial()
     {
-        throw new System.NotImplementedException();
+        CircleCollider2D cc = GetComponent<CircleCollider2D>();
+        cc.radius = BlastRadius;
     }
 }
